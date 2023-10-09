@@ -18,46 +18,80 @@ given on prior homeworks, referring to them as necessary.
 
 # #1
 
-In the previous homework, you created code to calculate an
-approximation of the number pi/4. For your reference, here is the code
-from the homework solution:
+In console type data() to see available built in data sets in R. Next load
+`faithful` data set by typing data("faithful"), which gives two columns of data.
+First column is the eruption time in minutes and second is the waiting time 
+until next eruption in minutes. 
 
-    pi_over_four <- 0
-    for(i in 1:100) {
-        if(i %% 4 == 1) {
-            pi_over_four <- pi_over_four + 1/i
-        } else if(i %% 4 == 3) {
-            pi_over_four <- pi_over_four - 1/i
-        }
-    }
-
-In this code, the number 100 is called the "order of approximation."
-Write a function, called `pi4approx`, which takes a positive integer
-`n` as input (with default `n=100`) and returns the approximation of
-pi/4 using `n` as the order of approximation. If the user inputs an `n`,
-which is not a positive integer, then use the default value for `n`.
-Some examples of the function's usage and output are included in the
-file `examples.html`.
+Then write a function called geyser that takes two arguments, the first is the time 
+of eruptions called `length` and second is the wait time between eruptions called 
+`wait`. The function should build a data frame that contains geyser entries that
+exceed the length and are less than the wait times.
 
 ```{r}
+
+
+
+```
+
+Create a data frame called `eruptions` with columns `Time` and `Pause`, both as 
+double, from geyser function. Call geyser function with the inputs 3 for `length` 
+and 70 for `wait`. Write the `eruptions` data frame to a file called `eruptions.csv`.
+
+
+```{r}
+
+
 
 ```
 
 # #2
 
-Install the `babynames` package (outside of your notebook), load
-the library (inside your notebook), and look at the help command
-`?babynames` in the console. Then write a function called `peak`, which
-takes two inputs, `myname` and `mysex`, and returns the year (as an
-object with class `numeric` or `integer`, not a data frame) in which
-that name/sex combination had its peak popularity (as indicated by the
-highest proportion). For example, `myname = "Samuel"` with `mysex = "M"`
-peaked in 1880. Since then, the popularity of that name/sex combination
-has been decreasing (in terms of the proportion). Some examples of the
-function's usage and output are included in the file `examples.html`.
-[Hints: Find exact name matches only. You do not need to do any error
-handling in this function.]
+Install the "babynames" package (outside of your script), load the library 
+(inside your script), and look at the help command "?babynames" in the console. 
+Then write a function called "peak", which takes two inputs, "myname" and "mysex", 
+and returns the year (as an object with class numeric/integer) in which that 
+name/sex combination had its peak popularity (indicated by the highest proportion). 
+For example, myname = "Yvonne" with mysex = "F" peaked in 1937. Since then, the
+popularity of that name/sex combination has been decreasing (in terms of the 
+proportion). See: https://rpubs.com/jalapic/babynames
+[Hints: Find exact name matches only. You do not need to do any error handling in 
+this function.]
 
 ```{r}
 
+
+
 ```
+
+Create a data frame called `names` with the columns `Name`, `Sex`, and `Year` all
+as character. Call the `peak` function with the following input. Add a row to 
+`names` for each, including the year result returned from the `peak` function. 
+Write the `names` data frame to a file called `names.csv`.
+
+"Frank", "M"
+"Zachary", "M"
+"Cassandra", "F"
+"Taylor", "F"
+"Taylor", "M"
+"Molly", "F"
+"Aquila", "M"
+"Jazmyn", "F"
+"Gable", "M"
+"Kang", "M"
+"Clarie", "F"
+"Misri", "F"
+"Robin", "M"
+"Deepak", "M"
+"Sierra", "F"
+
+
+```{r}
+
+
+
+```
+
+Create a solution.R file that contains the R code from this Rmd file. Be sure
+to place the library calls at the top followed by the functions. Then have 
+Part 1 and Part 2, where each code block is labeled by a comment.
