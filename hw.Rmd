@@ -18,15 +18,19 @@ given on prior homeworks, referring to them as necessary.
 
 # #1
 
-In console type data() to see available built in data sets in R. Next load
-`faithful` data set by typing data("faithful"), which gives two columns of data.
-First column is the eruption time in minutes and second is the waiting time 
-until next eruption in minutes. 
+Load `faithful` data set by typing data("faithful"), which gives two columns of data.
+First column is the eruption time in minutes and second is the wait time until next
+eruption in minutes. Create a data frame called `eruptions` with columns `Time` and
+`Pause`, both as double, which will contain the output from the geyser function.
 
-Then write a function called geyser that takes two arguments, the first is the time 
-of eruptions called `length` and second is the wait time between eruptions called 
-`wait`. The function should build a data frame that contains geyser entries that
-exceed the length and are less than the wait times.
+Write a function called `geyser` that takes two input arguments; the first the time
+of eruptions called `length` and second the wait time between eruptions called 
+`wait`. The function should add values to the `eruptions` data frame that exceed the
+`length` input argument and are less than the `wait` input argument. In essence, the
+function selects values that describe the degree of geyser activity desired, 
+according to the given input arguments. [Hint: You do not need to do any error
+handling in this function.]
+
 
 ```{r}
 
@@ -35,8 +39,10 @@ exceed the length and are less than the wait times.
 ```
 
 Create a data frame called `eruptions` with columns `Time` and `Pause`, both as 
-double, from geyser function. Call geyser function with the inputs 3 for `length` 
-and 70 for `wait`. Write the `eruptions` data frame to a file called `eruptions.csv`.
+double. Call geyser function with the inputs 3 for `length` and 70 for `wait`. Be
+sure to keep the geyser function output in the `eruptions` data frame. Write the
+`eruptions` data frame to a file called `eruptions.csv` to save results in a text
+file.
 
 
 ```{r}
@@ -49,7 +55,7 @@ and 70 for `wait`. Write the `eruptions` data frame to a file called `eruptions.
 
 Install the "babynames" package (outside of your script), load the library 
 (inside your script), and look at the help command "?babynames" in the console. 
-Then write a function called "peak", which takes two inputs, "myname" and "mysex", 
+Then write a function called `peak`, which takes two inputs, `myname` and `mysex`, 
 and returns the year (as an object with class numeric/integer) in which that 
 name/sex combination had its peak popularity (indicated by the highest proportion). 
 For example, myname = "Yvonne" with mysex = "F" peaked in 1937. Since then, the
@@ -65,9 +71,10 @@ this function.]
 ```
 
 Create a data frame called `names` with the columns `Name`, `Sex`, and `Year` all
-as character. Call the `peak` function with the following input. Add a row to 
-`names` for each, including the year result returned from the `peak` function. 
-Write the `names` data frame to a file called `names.csv`.
+as character. Call the `peak` function with the input below. Add a row to 
+`names` for each function call, which includes the year result returned from the
+`peak` function. Write the `names` data frame to a file called `names.csv` to save
+the results in a text file.
 
 "Frank", "M"
 "Zachary", "M"
@@ -94,4 +101,6 @@ Write the `names` data frame to a file called `names.csv`.
 
 Create a solution.R file that contains the R code from this Rmd file. Be sure
 to place the library calls at the top followed by the functions. Then have 
-Part 1 and Part 2, where each code block is labeled by a comment.
+Part 1 and Part 2, where each code block is labeled by a comment. This order
+is different from the Rmd, but is the order that a well-structured R script
+would be in.
